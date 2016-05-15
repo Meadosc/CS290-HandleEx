@@ -21,10 +21,12 @@ app.get('/get-loopback-improved',function(req,res){
   context.dataList = qParams;
   res.render('get-loopback-improved', context);
 });
+//*****************************************************************************************
+
 app.get('/other-page',function(req,res){
   res.render('other-page');
 });
-//*****************************************************************************************
+
 
 function genContext(){
   var stuffToDisplay = {};
