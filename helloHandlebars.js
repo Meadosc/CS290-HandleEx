@@ -29,7 +29,7 @@ function randNum(){
 
 app.get('/time',function(req,res){
   res.render('time', genContext());
-  //res.render('number', randNum());
+  res.render('number', randNum());
 });
 
 app.use(function(req,res){
