@@ -31,14 +31,14 @@ app.get('/',function(req,res){
 app.post('/', function(req,res){
   var qParams = [];
   for (var p in req.query){
-    qParams.push({'name':p,'value':req.query[b]})
+    qParams.push({'name':p,'value':req.query[p]})
   }
   var context = {};
   context.dataList1 = qParams;
   
   var bParams = [];
   for (var b in req.body){
-    bParams.push({'name':b,'value':req.body[p]})
+    bParams.push({'name':b,'value':req.body[b]})
   }
   console.log(bParams);
   console.log(req.body);
