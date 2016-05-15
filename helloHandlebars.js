@@ -18,7 +18,7 @@ app.get('/other-page',function(req,res){
 function genContext(){
   var stuffToDisplay = {};
   stuffToDisplay.time = (new Date(Date.now())).toLocaleTimeString('en-US');
-  stuffToDisplay.number = (Math.Random()); // editing to see how app.render works
+  //stuffToDisplay.number = (Math.Random()); // editing to see how app.render works
   return stuffToDisplay;
 }
 
