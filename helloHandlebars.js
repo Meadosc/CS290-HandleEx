@@ -23,21 +23,6 @@ app.get('/get-loopback-improved',function(req,res){
 });
 //*****************************************************************************************
 
-app.get('/other-page',function(req,res){
-  res.render('other-page');
-});
-
-
-function genContext(){
-  var stuffToDisplay = {};
-  stuffToDisplay.time = (new Date(Date.now())).toLocaleTimeString('en-US');
-  stuffToDisplay.number = (Math.random()); // editing to see how app.render works
-  return stuffToDisplay;
-}
-
-app.get('/time',function(req,res){
-  res.render('time', genContext());
-});
 
 app.use(function(req,res){
   res.status(404);
