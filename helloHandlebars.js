@@ -18,19 +18,12 @@ app.get('/other-page',function(req,res){
 function genContext(){
   var stuffToDisplay = {};
   stuffToDisplay.time = (new Date(Date.now())).toLocaleTimeString('en-US');
-  //stuffToDisplay.number = (Math.random()); // editing to see how app.render works
+  stuffToDisplay.number = (Math.random()); // editing to see how app.render works
   return stuffToDisplay;
-}
-
-function randNum(){
-  var numDisplay = {};
-  numDisplay.number = (Math.random());
-  return numDisplay;
 }
 
 app.get('/time',function(req,res){
   res.render('time', genContext());
-  res.render('number', randNum());
 });
 
 app.use(function(req,res){
