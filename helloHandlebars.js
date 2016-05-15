@@ -7,12 +7,8 @@ app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 app.set('port', 3000);
 
-app.get('/',function(req,res){
-  res.render('home.handlebars') //We can omit the .handlebars extension as we do below
-});
-
 //Get request portion of the code**********************************************************
-app.get('/get-loopback-improved',function(req,res){
+app.get('/',function(req,res){
   var qParams = [];
   for (var p in req.query){
     qParams.push({'name':p,'value':req.query[p]})
