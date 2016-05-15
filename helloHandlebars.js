@@ -19,6 +19,28 @@ app.get('/',function(req,res){
 });
 //*****************************************************************************************
 
+//Post request portion of the code*********************************************************
+  //Setting up post parser
+var bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+  //The post app call
+app.post('/', function(req,res){
+  var qParams = [];
+  for (var p in req.body){
+    qParams.push({'name':p,'value':req.body[p]})
+  }
+  console.log(qParams);
+  console.log(req.body);
+  var context = {};
+  context.dataList = qParams;
+  res.render('home', context);
+});
+
+
+//*****************************************************************************************
 
 app.use(function(req,res){
   res.status(404);
