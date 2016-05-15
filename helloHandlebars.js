@@ -15,6 +15,7 @@ app.get('/',function(req,res){
   }
   var context = {};
   context.dataList = qParams;
+  context.reqType = 'GET';
   res.render('home', context);
 });
 //*****************************************************************************************
