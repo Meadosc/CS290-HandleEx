@@ -19,7 +19,7 @@ app.get('/',function(req,res){
     qParams.push({'name':p,'value':req.query[p]})
   }
   var context = {};
-  context.dataList = qParams;
+  context.dataList1 = qParams;
   context.reqType = 'GET';
   res.render('home', context);
 });
@@ -30,14 +30,20 @@ app.get('/',function(req,res){
   //The post app call
 app.post('/', function(req,res){
   var qParams = [];
-  for (var p in req.body){
-    qParams.push({'name':p,'value':req.body[p]})
+  for (var p in req.query){
+    qParams.push({'name':p,'value':req.query[p]})
   }
-  console.log(qParams);
-  console.log(req.body);
   var context = {};
+  context.dataList1 = qParams;
+  
+  var bParams = [];
+  for (var b in req.body){
+    bParams.push({'name':b,'value':req.body[p]})
+  }
+  console.log(bParams);
+  console.log(req.body);
   context.reqType = 'POST';
-  context.dataList = qParams;
+  context.dataList2 = bParams;
   res.render('home', context);
 });
 
