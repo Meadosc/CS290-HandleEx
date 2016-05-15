@@ -2,6 +2,11 @@ var express = require('express');
 
 var app = express();
 var handlebars = require('express-handlebars').create({defaultLayout:'main'});
+  //Setting up post parser
+var bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
@@ -21,11 +26,6 @@ app.get('/',function(req,res){
 //*****************************************************************************************
 
 //Post request portion of the code*********************************************************
-  //Setting up post parser
-var bodyParser = require('body-parser');
-
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
 
   //The post app call
 app.post('/', function(req,res){
