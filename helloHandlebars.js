@@ -15,6 +15,23 @@ app.get('/other-page',function(req,res){
   res.render('other-page');
 });
 
+function genContext(){
+  var stuffToDisplay = {};
+  stuffToDisplay.time = (new Date(Date.now())).toLocaleTimeString('en-US');
+  return stuffToDisplay;
+}
+
+function randNum(){
+  var numDisplay = {};
+  numDisplay.number = (Math.Random());
+  return numDisplay;
+}
+
+app.get('/time',function(req,res){
+  res.render('time', genContext());
+  res.render('number', randNum());
+});
+
 app.use(function(req,res){
   res.status(404);
   res.render('404');
