@@ -36,6 +36,7 @@ app.post('/', function(req,res){
   console.log(qParams);
   console.log(req.body);
   var context = {};
+  context.reqType = 'POST';
   context.dataList = qParams;
   res.render('home', context);
 });
